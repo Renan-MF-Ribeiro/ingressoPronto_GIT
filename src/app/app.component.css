@@ -1,0 +1,22 @@
+.container-fluid {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.sidenav {
+    width: 15vw;
+    align-content: center;
+    text-align: center;
+}
+
+.sidenav span {
+    font-size: 10vw;
+}

@@ -1,0 +1,50 @@
+<div class="card-wrapper">
+    <mat-card class="box">
+        <div class="atracao" id="danca">
+
+            <mat-grid-list [cols]="cols" [rowHeight]="row">
+                <mat-grid-tile [colspan]="colsGridimg" rowspan="7">
+                    <img src="assets/Atração-dança.jpg" width="100%" style="float: left;  border-radius: 25px;">
+
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridPrincipal" [rowspan]="rowSpanDescricao">
+
+                    <article style="padding: 1vw;font-size: x-small;"> O palco da Central do Universo – recebe o espetáculo de dança contemporânea “A Porta”. A coreografia de Xitão e Nilzinho Almeida fala da relação do homem e da mulher com os desafios da cidade, os aglomerados de edifícios, a periferia,
+                        carência, o trânsito, o caos, diversos problemas e eles precisam caminhar junto com a cidade, estar em evolução constante, reinventar, adaptar-se e com isso, quando uma porta se fecha, uma janela se abre e só nos resta dançar.
+                    </article>
+                </mat-grid-tile>
+                <mat-grid-tile><span class="material-icons">theater_comedy</span></mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridSecundario">Espaço Central do Universo Palco Principal</mat-grid-tile>
+                <mat-grid-tile><span class="material-icons">schedule</span></mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridSecundario">14h,17h e 20h</mat-grid-tile>
+                <mat-grid-tile><span class="material-icons">local_atm</span></mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridSecundario">R$20,00 (inteira) | R$10,00 (meia) - Classificação Livre</mat-grid-tile>
+                <mat-grid-tile [colspan]="cols">
+                    <button mat-raised-button color="accent" style="width: 100%;" (click)="atracoes('danca')">Garanta já o seu ingresso aqui!</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <div class="atracao" style="margin-top: 1.5vw;" id="orquestra">
+            <mat-grid-list [cols]="cols" [rowHeight]="row" style="margin-top: 2vw;">
+                <mat-grid-tile [colspan]="colsGridimg" rowspan="7">
+                    <img src="assets/atraçãp-orquestra.jpg" width="100%" style="float: left;  border-radius: 25px;">
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridPrincipal" [rowspan]="rowSpanDescricao">
+                    <article style="padding: 1vw;font-size: x-small;">
+                        A Central do Universo – Tem o prazer de receber em seu Auditorio principal, a Orquesta Sinfônica "Juntos". Orquestra composta por ex-moradores de rua que encontraram na musica classica uma inspiração e força que os tirou das ruas e lhes aprensentou o
+                        mundo da musica, hoje fazem apresentações estado afora com o intuito de arrecadar fundos para institutos que fazem o acolhimento de pessoas em situação de rua.
+                    </article>
+                </mat-grid-tile>
+                <mat-grid-tile><span class="material-icons">theater_comedy</span></mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridSecundario">Espaço Central do Universo Auditorio Principal</mat-grid-tile>
+                <mat-grid-tile><span class="material-icons">schedule</span></mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridSecundario">13h,15h,17 e 21h</mat-grid-tile>
+                <mat-grid-tile><span class="material-icons">local_atm</span></mat-grid-tile>
+                <mat-grid-tile [colspan]="colsGridSecundario">R$20,00 (inteira) | R$10,00 (meia) - Classificação Livre</mat-grid-tile>
+                <mat-grid-tile [colspan]="cols">
+                    <button mat-raised-button color="primary" style="width: 100%;" (click)="atracoes('orquestra')">Garanta já o seu ingresso aqui!</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-card>
+</div>

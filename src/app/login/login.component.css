@@ -1,0 +1,22 @@
+.container-fluid {
+    text-align: center;
+    width: 25vw;
+}
+
+a {
+    color: #0000ff;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+mat-grid-list {
+    text-align: center;
+    margin: 2vw;
+}
+
+mat-card-content,
+mat-form-field {
+    width: 100%;
+}

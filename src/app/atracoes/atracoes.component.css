@@ -1,0 +1,59 @@
+.container-fluid {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.box {
+    opacity: 1;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 60%;
+    padding: 2vw;
+}
+
+.box.back {
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    top: -20px;
+    opacity: .8;
+    z-index: -1;
+}
+
+.box:before {
+    content: "";
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+    background: rgba(255, 255, 255, .6);
+    left: 0;
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    z-index: -1;
+}
+
+#danca mat-grid-tile {
+    background: #ffe6e6;
+    font-size: smaller;
+}
+
+#orquestra mat-grid-tile {
+    background: #e6f3ff;
+    font-size: small;
+}

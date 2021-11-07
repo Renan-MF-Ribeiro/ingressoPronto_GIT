@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <img src="assets/logo.png" class="figure-img img-fluid rounded" alt="..." width="70vw" style="margin: 1vw;">
+    <form class="form" *ngIf="!register" [formGroup]="usuario" (ngSubmit)="entrar()">
+        <h1 mat-dialog-title>Login</h1>
+        <mat-card-content>
+            <mat-grid-list cols="1" rowHeight="6vw">
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Email" type="email" id="email" formControlName="email" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Password" id="password" type="password" formControlName="password" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-grid-list cols="1" rowHeight="4vw">
+            <mat-grid-tile *ngIf="errorLogin != undefined" rowspan="2">
+                <mat-hint style="color: #ff0000;">{{errorLogin}}</mat-hint>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button mat-stroked-button color="primary" class="btn-block" type="submit" [disabled]="!usuario.valid">Entrar</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+    <form class="form" *ngIf="register" [formGroup]="registrarUsuario" (ngSubmit)="cadastrar()">
+        <h1 mat-dialog-title>Resgistro</h1>
+        <mat-card-content>
+            <mat-grid-list cols="1" rowHeight="4vw">
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Nome" id="nome" formControlName="nome" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Apelido" type="text" id="apelido" formControlName="apelido" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Email" type="text" id="newemail" formControlName="email" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Password" id="newpassword" type="password" formControlName="password" required>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="Password Confirm" id="newpasswordconfirm" type="password" formControlName="passwordConfirm" required (keyup)="confirmPassword()">
+                        <mat-hint *ngIf="passwordConfirm" style="color: #ff0000;">
+                            As senhas devem ser iguais
+                        </mat-hint>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-grid-list cols="1" rowHeight="3vw">
+            <mat-grid-tile *ngIf="errorLogin != undefined" rowspan="2">
+                <mat-hint style="color: #ff0000;">{{errorLogin}}</mat-hint>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="errorLogin == undefined">
+                <button mat-stroked-button color="primary" class="btn-block" [disabled]="!(registrarUsuario.valid && !passwordConfirm)" type="submit">Cadastrar</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </form>
+    <p style="margin-top:1vw;position: relative; bottom: 0;" *ngIf="!register">
+
+        Novo por aqui?<a (click)="register = !register"> Resgistre-se</a>
+    </p>
+    <p style="margin-top:1vw;position: relative; bottom: 0;" *ngIf="register">
+
+        Já tem cadastro?<a (click)="register = !register"> Login</a>
+    </p>
+</div>
