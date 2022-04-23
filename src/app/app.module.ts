@@ -12,6 +12,7 @@ import { AtracoesComponent } from './atracoes/atracoes.component';
 import { AtracoesSelectedComponent, ErrorDialog } from './atracoes-selected/atracoes-selected.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { QRCodeModule } from 'angular2-qrcode';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QRCodeModule } from 'angular2-qrcode';
     AtracoesComponent,
     AtracoesSelectedComponent,
     ReservaComponent,
-    ErrorDialog
+    ErrorDialog,
+    UsuarioComponent
 
   ],
   entryComponents: [LoginComponent, ReservaComponent, ErrorDialog],

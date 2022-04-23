@@ -20,3 +20,7 @@
 .sidenav span {
     font-size: 10vw;
 }
+
+.pointer {
+    cursor: pointer;
+}

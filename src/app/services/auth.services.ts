@@ -7,6 +7,7 @@ export class Auth {
     public idToken!: string
     public loginSucess:string = 'null'
     public cadastroSucess:string = 'null'
+    public resetSucess:string = 'null'
     public error!: string
     public email!:string
 
@@ -19,7 +20,22 @@ export class Auth {
         sessionStorage.setItem(btoa('level'), level)
     }
 
-
+    public reset(email:string){
+        
+        firebase.auth().sendPasswordResetEmail(email)
+        .then((restosta:any)=>{
+            
+            this.resetSucess = 'true'
+            this.error= 'Email enviado com sucesso! Verifique sua caixa de entrada.'
+            console.log(this.error)
+        })
+        .catch((error:any)=>{
+            this.resetSucess = 'false'
+            this.error=  this.VerifyErroCode(error.code)
+            console.log(this.error)
+        })
+        
+    }
     public register(user: any) {
       
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -34,8 +50,7 @@ export class Auth {
                 })
                 .catch((error: any) => {
                    this.cadastroSucess = 'false'
-                   this.error =  this.VerifyErroCode(error.code)
-                          })
+                   this.error =  this.VerifyErroCode(error.code)})
     }
 
     public entrar(user: any) {

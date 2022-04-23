@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <img src="assets/logo.png" class="figure-img img-fluid rounded" alt="..." width="70vw" style="margin: 1vw;">
-    <form class="form" *ngIf="!register" [formGroup]="usuario" (ngSubmit)="entrar()">
+    <form class="form" *ngIf="register == 'login'" [formGroup]="usuario" (ngSubmit)="entrar()">
         <h1 mat-dialog-title>Login</h1>
         <mat-card-content>
             <mat-grid-list cols="1" rowHeight="6vw">
@@ -12,6 +12,9 @@
                 <mat-grid-tile>
                     <mat-form-field class="standard">
                         <input matInput placeholder="Password" id="password" type="password" formControlName="password" required>
+                        <mat-hint>
+                            <a (click)="changeview('reset')">Esqueceu a senha?</a>
+                        </mat-hint>
                     </mat-form-field>
                 </mat-grid-tile>
             </mat-grid-list>
@@ -25,7 +28,7 @@
             </mat-grid-tile>
         </mat-grid-list>
     </form>
-    <form class="form" *ngIf="register" [formGroup]="registrarUsuario" (ngSubmit)="cadastrar()">
+    <form class="form" *ngIf="register == 'cadastro'" [formGroup]="registrarUsuario" (ngSubmit)="cadastrar()">
         <h1 mat-dialog-title>Resgistro</h1>
         <mat-card-content>
             <mat-grid-list cols="1" rowHeight="4vw">
@@ -70,12 +73,34 @@
         </mat-grid-list>
 
     </form>
-    <p style="margin-top:1vw;position: relative; bottom: 0;" *ngIf="!register">
+    <form class="form" *ngIf="register == 'reset'" (ngSubmit)="resetSenha(emailReset.value)">
+        <h1 mat-dialog-title>Reset de Senha</h1>
+        <mat-card-content>
+            <mat-grid-list cols="1" rowHeight="4vw">
+                <mat-grid-tile>
+                    <mat-form-field class="standard">
+                        <input matInput placeholder="email" #emailReset required>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-grid-list cols="1" rowHeight="3vw">
+            <mat-grid-tile *ngIf="reset != undefined" rowspan="2">
+                <mat-hint style="color: #ff0000;">{{reset}}</mat-hint>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="reset == undefined">
+                <button mat-stroked-button color="primary" class="btn-block" [disabled]="emailReset.value == 'null'" type="submit">Solicitar </button>
+            </mat-grid-tile>
+        </mat-grid-list>
 
-        Novo por aqui?<a (click)="register = !register"> Resgistre-se</a>
+    </form>
+    <p style="margin-top:1vw;position: relative; bottom: 0;" *ngIf="register == 'login'">
+
+        Novo por aqui?
+        <a (click)="changeview('cadastro')"> Resgistre-se</a>
     </p>
-    <p style="margin-top:1vw;position: relative; bottom: 0;" *ngIf="register">
+    <p style="margin-top:1vw;position: relative; bottom: 0; " *ngIf="register!='login' ">
 
-        Já tem cadastro?<a (click)="register = !register"> Login</a>
+        Já tem cadastro?<a (click)="changeview('login')"> Login</a>
     </p>
 </div>

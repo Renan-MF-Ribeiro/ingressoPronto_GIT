@@ -1,0 +1,80 @@
+<div class="card-wrapper">
+    <mat-card class="box">
+        <mat-grid-list cols="1" rowHeight="28vw">
+            <mat-grid-tile>
+                <mat-tab-group class="full-height" mat-align-tabs="center">
+                    <mat-tab label="Configuração">
+                        <div class="container-fluid">
+                            <mat-grid-list cols="4" rowHeight="4vw">
+                                <mat-grid-tile>
+                                    <label>Nome: </label>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput value="teste" required [disabled]="editDados">
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <label>Senha atual: </label>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput value="" type="password" required [disabled]="editDados">
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <label>Apelido: </label>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput required [disabled]="editDados">
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <label>Nova senha: </label>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput required [disabled]="editPass">
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <label>Email: </label>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput required [disabled]="editDados">
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <label>Confirmar senha: </label>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput required [disabled]="editPass">
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile colspan="2">
+                                    <button mat-stroked-button (click)="editDados = !editDados">Editar dados</button>
+                                </mat-grid-tile>
+                                <mat-grid-tile colspan="2">
+                                    <button mat-stroked-button (click)="editPass = !editPass">Alterar Senha</button>
+                                </mat-grid-tile>
+                                <mat-grid-tile colspan="4">
+                                    <button mat-raised-button (click)="editPass = !editPass" color="primary">Confirmar</button>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Reservas">
+
+                    </mat-tab>
+                    <mat-tab label="Excluir Conta">
+
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+    <div>

@@ -9,9 +9,9 @@ export class AuthGuardService implements CanActivate {
 constructor(private router: Router){}
 
     canActivate(): boolean {
-      if(!(sessionStorage.getItem('token') == 'true')){
+      if(!(sessionStorage.getItem(btoa('token')) != null)){
         this.router.navigate([''])
       }
-      return sessionStorage.getItem('token') == 'true'
+      return sessionStorage.getItem(btoa('token')) != null
         }
   }

@@ -2,9 +2,17 @@
 
     <mat-drawer #drawer class="sidenav" hasBackdrop="true" mode="over" position="end">
         <span class="material-icons">account_circle</span>
-        <nav class="nav flex-column navbar-dark">
-            <p style="color:#fff"></p>
-            <a routerLink="" (click)="sair()">Sair</a>
+        <nav class="nav flex-column navbar-dark pointer" routerLink="usuario" (click)="drawer.toggle()">
+            <span class="material-icons" style="font-size:x-large;">confirmation_number</span><br>
+            <a>Minhas Reservas</a>
+        </nav>
+        <nav class="nav flex-column navbar-dark pointer" routerLink="usuario" (click)="drawer.toggle()">
+            <span class="material-icons" style="font-size:x-large;">settings</span><br>
+            <a>Configurações</a>
+        </nav>
+        <nav class="nav flex-column navbar-dark pointer" routerLink="" (click)="sair()">
+            <span class="material-icons" style="font-size:x-large;">logout</span><br>
+            <a>Sair</a>
         </nav>
     </mat-drawer>
     <div class="container-fluid" style="background-image: url('assets/teatro.jpg');">
