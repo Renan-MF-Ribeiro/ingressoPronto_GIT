@@ -21,16 +21,7 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     localStorage.clear()
     sessionStorage.clear()
-    const firebaseConfig = {
-      apiKey: "AIzaSyDtRPEUm4v18xhZ-7wUJ29C_JuhUDhUajI",
-      authDomain: "ingresso-pronto.firebaseapp.com",
-      databaseURL: "https://ingresso-pronto-default-rtdb.firebaseio.com",
-      projectId: "ingresso-pronto",
-      storageBucket: "ingresso-pronto.appspot.com",
-      messagingSenderId: "568984313431",
-      appId: "1:568984313431:web:c8a32b77edddc6b41bcd12",
-      measurementId: "G-FY55S3FYS6"
-    };
+   
 
     firebase.initializeApp(firebaseConfig);
 
